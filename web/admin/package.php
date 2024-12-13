@@ -9,7 +9,10 @@
 
 <body>
 
-    <?php include 'php/nav.php' ?>
+    <?php 
+        require_once '../../config/database.php';
+        include 'php/nav.php';
+    ?>
 
     <div class="container py-2">
 
@@ -19,7 +22,6 @@
             $description=$_POST['description'];
 
             if(!empty($name) && !empty($description)){
-                require_once '../../config/database.php';
                 $sqlState=$pdo->prepare('INSERT INTO packages (name, description) VALUES (?,?)');
                 $sqlState->execute([$name,$description]);
                 ?>
@@ -50,6 +52,39 @@
         </div>
         <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button>
     </form>
-  </div>
+    </div>
+    <div class="container py-2">
+        <h4>TABLEAU DES PACKAGES</h4>
+        <?php
+            $packages = $pdo->query('SELECT * FROM packages')->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Packages</th>
+                <th>Description</th>
+                <th>Opérations</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    foreach($packages as $package){
+                        ?>
+                        <tr>
+                            <td><?php echo $package['id'] ?></td>
+                            <td><?php echo $package['name'] ?></td>
+                            <td><?php echo $package['description'] ?></td>
+                            <td>
+                            <a href="php/modifier_package.php?id=<?php echo $package['id'] ?>" class="btn btn-primary btn-sm" >Modifier</a>
+                            <a href="php/delete_package.php?id=<?php echo $package['id'] ?>" onclick="return confirm('Vouler vous vraiment supprimer le package <?php echo $package['name'] ?>')" class="btn btn-danger btn-sm" >Supprimer</a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>

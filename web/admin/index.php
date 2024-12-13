@@ -70,6 +70,54 @@
             <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button>
         </form>
     </div>
+    <div class="container py-2">
+        <h4>TABLEAU DES COLLABORATIONS</h4>
+        <?php
+            $collaborations = $pdo->query("SELECT 
+                                        collaborations.id AS id, 
+                                        authors.name AS author, 
+                                        packages.name AS package
+                                    FROM 
+                                        collaborations
+                                    INNER JOIN 
+                                        authors 
+                                    ON 
+                                        collaborations.author_id = authors.id
+                                    INNER JOIN 
+                                        packages 
+                                    ON 
+                                        collaborations.package_id = packages.id;
+                                    ")->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Packages</th>
+                <th>Authors</th>
+                <th>Opérations</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    foreach($collaborations as $collaboration){
+                        ?>
+                        <tr>
+                            <td><?php echo $collaboration['id'] ?></td>
+                            <td><?php echo $collaboration['package'] ?></td>
+                            <td><?php echo $collaboration['author'] ?></td>
+                            <td>
+                                <a href="php/modifier_collaboration.php?id=<?php echo $collaboration['id'] ?>" class="btn btn-primary btn-sm" >Modifier</a>
+                                <a href="php/delete_collaboration.php?id=<?php echo $collaboration['id'] ?>" onclick="return confirm('Vouler vous vraiment supprimer la collaboration d id <?php echo $collaboration['id'] ?>')" class="btn btn-danger btn-sm" >Supprimer</a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 
 </html>

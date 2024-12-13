@@ -62,6 +62,42 @@
         </div>
         <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button>
     </form>
-  </div>
+    </div>
+    <div class="container py-2">
+        <h4>TABLEAU DES VERSIONS</h4>
+        <?php
+            $versions = $pdo->query("SELECT versions.*, packages.name AS 'package' FROM versions INNER JOIN packages ON versions.package_id = packages.id")->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>package</th>
+                <th>version</th>
+                <th>date de creation</th>
+                <th>Opérations</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    foreach($versions as $version){
+                        ?>
+                        <tr>
+                            <td><?php echo $version['id'] ?></td>
+                            <td><?php echo $version['package'] ?></td>
+                            <td><?php echo $version['version_number'] ?></td>
+                            <td><?php echo $version['release_date'] ?></td>
+                            <td>
+                                <a href="php/modifier_version.php?id=<?php echo $version['id'] ?>" class="btn btn-primary btn-sm" >Modifier</a>
+                                <a href="php/delete_version.php?id=<?php echo $version['id'] ?>" onclick="return confirm('Vouler vous vraiment supprimer la version <?php echo $version['version_number'] ?>')" class="btn btn-danger btn-sm" >Supprimer</a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
+
 </body>
 </html>

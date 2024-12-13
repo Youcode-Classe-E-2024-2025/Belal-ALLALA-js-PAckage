@@ -9,7 +9,10 @@
 
 <body>
 
-    <?php include 'php/nav.php' ?>
+    <?php 
+        require_once '../../config/database.php';
+        include 'php/nav.php';
+    ?>
 
     <div class="container py-2">
 
@@ -19,7 +22,6 @@
             $email=$_POST['email'];
 
             if(!empty($name) && !empty($email)){
-                require_once '../../config/database.php';
                 $sqlState=$pdo->prepare('INSERT INTO authors (name, email) VALUES (?,?)');
                 $sqlState->execute([$name,$email]);
                 ?>
@@ -50,6 +52,39 @@
         </div>
         <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button>
     </form>
-  </div>
+    </div>
+    <div class="container py-2">
+        <h4>TABLEAU DES AUTHORS</h4>
+        <?php
+            $authors = $pdo->query('SELECT * FROM authors')->fetchAll(PDO::FETCH_ASSOC);
+        ?>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Opérations</th>
+            </tr>
+            </thead>
+            <tbody>
+                <?php 
+                    foreach($authors as $author){
+                        ?>
+                        <tr>
+                            <td><?php echo $author['id'] ?></td>
+                            <td><?php echo $author['name'] ?></td>
+                            <td><?php echo $author['email'] ?></td>
+                            <td>
+                            <a href="php/modifier_author.php?id=<?php echo $author['id'] ?>" class="btn btn-primary btn-sm" >Modifier</a>
+                            <a href="php/delete_author.php?id=<?php echo $author['id'] ?>" onclick="return confirm('Vouler vous vraiment supprimer le author <?php echo $author['name'] ?>')" class="btn btn-danger btn-sm" >Supprimer</a>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
