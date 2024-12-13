@@ -91,8 +91,8 @@
         ?>
         <table class="table table-striped">
             <thead>
-            <tr>
-                <!-- <th>#</th> -->
+            <!-- <tr> -->
+                <th>#</th>
                 <th>Packages</th>
                 <th>Authors</th>
                 <th>Opérations</th>
