@@ -89,8 +89,8 @@
                                         collaborations.package_id = packages.id;
                                     ")->fetchAll(PDO::FETCH_ASSOC);
         ?>
-        <table class="table table-striped">
-            <!-- <thead> -->
+        <!-- <table class="table table-striped"> -->
+            <thead>
             <tr>
                 <th>#</th>
                 <th>Packages</th>
