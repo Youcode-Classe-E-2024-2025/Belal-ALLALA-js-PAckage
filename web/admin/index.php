@@ -53,9 +53,9 @@
                 </select>
             </div>
 
-            <div class="mb-3">
+            <!-- <div class="mb-3"> -->
                 <?php
-                    // $packages = $pdo->query('SELECT * FROM packages')->fetchAll(PDO::FETCH_ASSOC);
+                    $packages = $pdo->query('SELECT * FROM packages')->fetchAll(PDO::FETCH_ASSOC);
                 ?>
                 <label class="form-label">packages</label>
                 <select class="form-select" aria-label="Default select example" name = "package">
