@@ -100,9 +100,9 @@
             </thead>
             <tbody>
                 <?php 
-                    foreach($collaborations as $collaboration){
+                    // foreach($collaborations as $collaboration){
                         ?>
-                        <!-- <tr> -->
+                        <tr>
                             <td><?php echo $collaboration['id'] ?></td>
                             <td><?php echo $collaboration['package'] ?></td>
                             <td><?php echo $collaboration['author'] ?></td>
