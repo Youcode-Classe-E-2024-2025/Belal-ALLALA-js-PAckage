@@ -67,8 +67,8 @@
                 </select>
             </div>
 
-            <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button>
-        <!-- </form> -->
+            <!-- <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button> -->
+        </form>
     </div>
     <div class="container py-2">
         <h4>TABLEAU DES COLLABORATIONS</h4>
