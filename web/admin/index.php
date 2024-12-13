@@ -98,9 +98,9 @@
                 <th>Opérations</th>
             </tr>
             </thead>
-            <tbody>
+            <!-- <tbody> -->
                 <?php 
-                    // foreach($collaborations as $collaboration){
+                    foreach($collaborations as $collaboration){
                         ?>
                         <tr>
                             <td><?php echo $collaboration['id'] ?></td>
