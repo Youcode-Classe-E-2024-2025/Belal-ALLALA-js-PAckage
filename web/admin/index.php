@@ -70,8 +70,8 @@
             <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button>
         </form>
     </div>
-    <div class="container py-2">
-        <!-- <h4>TABLEAU DES COLLABORATIONS</h4> -->
+    <!-- <div class="container py-2"> -->
+        <h4>TABLEAU DES COLLABORATIONS</h4>
         <?php
             $collaborations = $pdo->query("SELECT 
                                         collaborations.id AS id, 
