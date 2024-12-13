@@ -60,11 +60,11 @@
                 <label class="form-label">packages</label>
                 <select class="form-select" aria-label="Default select example" name = "package">
                     <?php
-                        foreach ($packages as $package){
+                        // foreach ($packages as $package){
                             echo "<option value='".$package['id']."'>".$package['name']."</option>";
                         }
                     ?>
-                <!-- </select> -->
+                </select>
             </div>
 
             <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button>
