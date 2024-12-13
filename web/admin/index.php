@@ -94,8 +94,8 @@
             <tr>
                 <th>#</th>
                 <th>Packages</th>
-                <th>Authors</th>
-                <!-- <th>Opérations</th> -->
+                <!-- <th>Authors</th> -->
+                <th>Opérations</th>
             </tr>
             </thead>
             <tbody>
