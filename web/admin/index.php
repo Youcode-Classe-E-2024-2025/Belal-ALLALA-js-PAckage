@@ -114,7 +114,7 @@
                         <?php
                     }
                 ?>
-            <!-- </tbody> -->
+            </tbody>
         </table>
     </div>
 
