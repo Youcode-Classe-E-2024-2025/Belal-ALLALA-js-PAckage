@@ -51,9 +51,9 @@
                         }
                     ?>
                 </select>
-            </div>
+            <!-- </div> -->
 
-            <!-- <div class="mb-3"> -->
+            <div class="mb-3">
                 <?php
                     $packages = $pdo->query('SELECT * FROM packages')->fetchAll(PDO::FETCH_ASSOC);
                 ?>
