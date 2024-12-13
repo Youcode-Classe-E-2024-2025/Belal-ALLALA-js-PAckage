@@ -102,8 +102,8 @@
                 <?php 
                     foreach($collaborations as $collaboration){
                         ?>
-                        <tr>
-                            <!-- <td><?php echo $collaboration['id'] ?></td> -->
+                        <!-- <tr> -->
+                            <td><?php echo $collaboration['id'] ?></td>
                             <td><?php echo $collaboration['package'] ?></td>
                             <td><?php echo $collaboration['author'] ?></td>
                             <td>
