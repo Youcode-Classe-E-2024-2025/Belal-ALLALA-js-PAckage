@@ -97,8 +97,8 @@
                 <th>Authors</th>
                 <th>Opérations</th>
             </tr>
-            </thead>
-            <!-- <tbody> -->
+            <!-- </thead> -->
+            <tbody>
                 <?php 
                     foreach($collaborations as $collaboration){
                         ?>
