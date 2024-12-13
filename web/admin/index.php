@@ -71,7 +71,7 @@
         </form>
     </div>
     <div class="container py-2">
-        <h4>TABLEAU DES COLLABORATIONS</h4>
+        <!-- <h4>TABLEAU DES COLLABORATIONS</h4> -->
         <?php
             $collaborations = $pdo->query("SELECT 
                                         collaborations.id AS id, 
@@ -89,7 +89,7 @@
                                         collaborations.package_id = packages.id;
                                     ")->fetchAll(PDO::FETCH_ASSOC);
         ?>
-        <!-- <table class="table table-striped"> -->
+        <table class="table table-striped">
             <thead>
             <tr>
                 <th>#</th>
