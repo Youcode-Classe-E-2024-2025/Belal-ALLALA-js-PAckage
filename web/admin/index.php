@@ -65,9 +65,9 @@
                         }
                     ?>
                 </select>
-            </div>
+            <!-- </div> -->
 
-            <!-- <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button> -->
+            <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button>
         </form>
     </div>
     <div class="container py-2">
