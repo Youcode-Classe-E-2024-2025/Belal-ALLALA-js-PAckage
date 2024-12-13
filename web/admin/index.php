@@ -96,8 +96,8 @@
                 <th>Packages</th>
                 <th>Authors</th>
                 <th>Opérations</th>
-            </tr>
-            <!-- </thead> -->
+            <!-- </tr> -->
+            </thead>
             <tbody>
                 <?php 
                     foreach($collaborations as $collaboration){
