@@ -104,8 +104,8 @@
                         ?>
                         <tr>
                             <td><?php echo $collaboration['id'] ?></td>
-                            <td><?php echo $collaboration['package'] ?></td>
-                            <!-- <td><?php echo $collaboration['author'] ?></td> -->
+                            <!-- <td><?php echo $collaboration['package'] ?></td> -->
+                            <td><?php echo $collaboration['author'] ?></td>
                             <td>
                                 <a href="php/modifier_collaboration.php?id=<?php echo $collaboration['id'] ?>" class="btn btn-primary btn-sm" >Modifier</a>
                                 <a href="php/delete_collaboration.php?id=<?php echo $collaboration['id'] ?>" onclick="return confirm('Vouler vous vraiment supprimer la collaboration d id <?php echo $collaboration['id'] ?>')" class="btn btn-danger btn-sm" >Supprimer</a>
