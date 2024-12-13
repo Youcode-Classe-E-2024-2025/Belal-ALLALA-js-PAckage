@@ -90,8 +90,8 @@
                                     ")->fetchAll(PDO::FETCH_ASSOC);
         ?>
         <table class="table table-striped">
-            <thead>
-            <!-- <tr> -->
+            <!-- <thead> -->
+            <tr>
                 <th>#</th>
                 <th>Packages</th>
                 <th>Authors</th>
