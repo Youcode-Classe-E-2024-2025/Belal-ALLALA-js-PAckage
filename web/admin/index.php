@@ -64,8 +64,8 @@
                             echo "<option value='".$package['id']."'>".$package['name']."</option>";
                         }
                     ?>
-                </select>
-            <!-- </div> -->
+                <!-- </select> -->
+            </div>
 
             <button type="submit" class="btn btn-primary" name='ajouter'>Ajouter</button>
         </form>
