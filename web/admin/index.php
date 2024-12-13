@@ -58,10 +58,10 @@
                     $packages = $pdo->query('SELECT * FROM packages')->fetchAll(PDO::FETCH_ASSOC);
                 ?>
                 <label class="form-label">packages</label>
-                <select class="form-select" aria-label="Default select example" name = "package">
+                <!-- <select class="form-select" aria-label="Default select example" name = "package"> -->
                     <?php
                         foreach ($packages as $package){
-                            // echo "<option value='".$package['id']."'>".$package['name']."</option>";
+                            echo "<option value='".$package['id']."'>".$package['name']."</option>";
                         }
                     ?>
                 </select>
