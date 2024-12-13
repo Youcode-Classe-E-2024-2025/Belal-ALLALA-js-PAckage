@@ -93,8 +93,8 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Packages</th>
-                <!-- <th>Authors</th> -->
+                <!-- <th>Packages</th> -->
+                <th>Authors</th>
                 <th>Opérations</th>
             </tr>
             </thead>
